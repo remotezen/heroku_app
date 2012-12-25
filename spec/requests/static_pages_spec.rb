@@ -31,6 +31,11 @@ describe "StaticPages" do
                                  text: "#{base_title}Help"
                                  )
       end
+      it "should Help text inside a h3 tag" do
+        visit '/static_pages/help'
+        page.should have_selector('h3',
+                                 text: "Help")
+      end
     end
     describe "About page" do
       it "should have the content 'About Us' " do
